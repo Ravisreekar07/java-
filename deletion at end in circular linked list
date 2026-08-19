@@ -1,0 +1,29 @@
+class Node {
+    int data;
+    Node next;
+
+    Node(int data) {
+        this.data = data;
+        this.next = null;
+    }
+}
+void deleteEnd() {
+
+    if (head == null) {
+        System.out.println("List is empty");
+        return;
+    }
+
+    if (head.next == head) {
+        head = null;
+        return;
+    }
+
+    Node temp = head;
+
+    while (temp.next.next != head) {
+        temp = temp.next;
+    }
+
+    temp.next = head;
+}
